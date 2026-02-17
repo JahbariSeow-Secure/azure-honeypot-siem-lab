@@ -1,84 +1,126 @@
 # Azure SIEM & Honeypot SOC Lab
 
-This lab demonstrates hands-on skills in **Azure cloud security monitoring**, **SIEM integration**, and **SOC operations**.  
+This lab demonstrates hands-on skills in **Azure cloud security monitoring**, **SIEM integration**, and **SOC operations**.
 
-The lab simulates a real-world security operations scenario using honeypots, log collection, alerting, and threat detection to demonstrate **cloud security monitoring** and **incident response capabilities**.
+The lab simulates a real-world Security Operations Center (SOC) scenario using honeypots, centralized logging, and security analytics to demonstrate **threat detection**, **log analysis**, and **incident investigation** in Azure.
 
 ---
 
 ## Lab Overview
 
-- Deployed **Azure virtual machines** acting as a honeypot environment  
-- Configured **Azure Sentinel (SIEM)** to collect logs and monitor for suspicious activity  
-- Implemented **alert rules** and **playbooks** for automated incident detection and response  
-- Simulated attack traffic to test **visibility, detection, and SOC workflows**
+- Designed and deployed a **cloud-based SOC lab** in Azure
+- Used **honeypot virtual machines** to attract and log malicious activity
+- Centralized security logs using **Azure Monitor and Log Analytics**
+- Queried and analyzed security events using **KQL (Kusto Query Language)**
+- Simulated real-world attack behavior for detection and analysis
 
 **Business Problem Solved:**  
-- Provides hands-on experience detecting and responding to cloud-based attacks  
-- Demonstrates the ability to set up proactive monitoring and incident response  
-- Helps secure cloud workloads and maintain compliance with enterprise security standards  
+- Provides visibility into malicious activity targeting cloud workloads  
+- Demonstrates SOC analyst skills in monitoring, detection, and investigation  
+- Shows how organizations detect threats before production systems are impacted  
+
+---
+
+## Resource Group & Environment Setup
+
+- Created a **dedicated resource group** to logically separate SOC resources  
+- Organized compute, networking, and monitoring components under one management boundary  
+- Enabled easier lifecycle management, visibility, and cost control
+
+![Resource Group Creation](screenshots/00-resource-group-creation.png)  
+*Dedicated resource group created to contain all SOC lab resources.*
+
+---
+
+## Virtual Network Configuration
+
+- Created a **Virtual Network (VNet)** to isolate the SOC lab environment  
+- Defined address space and subnet for the honeypot VM  
+- Provided controlled network segmentation for security monitoring and analysis
+
+![VNet Creation](screenshots/01-vnet-creation.png)  
+*Virtual network created to support the honeypot and SOC monitoring architecture.*
+
+![VNet Overview](screenshots/02-vnet-overview.png)  
+*Overview of the configured virtual network and subnet.*
 
 ---
 
 ## Honeypot Deployment
 
-- Deployed **Azure VMs** with intentionally vulnerable services to act as honeypots  
-- Configured **network security groups (NSGs)** to allow controlled traffic for monitoring  
-- Monitored traffic for suspicious connections, brute-force attempts, and unusual patterns  
+- Deployed **Azure Virtual Machines** configured as honeypots  
+- Attached the VM to the previously created **VNet and subnet**  
+- Configured **Network Security Groups (NSGs)** to allow controlled inbound traffic  
+- Generated security events using RDP access, ICMP traffic, and failed authentication attempts
 
-**Business Problem Solved:**  
-- Enables detection of attack patterns in a safe environment  
-- Provides real-world practice for identifying threats before they impact production systems  
+![VM Provisioning](screenshots/03-vm-provisioning.png)  
+*Provisioning a Windows VM to act as a honeypot.*
 
----
+![VM Overview](screenshots/04-vm-overview.png)  
+*Overview of the deployed honeypot virtual machine.*
 
-## Log Collection & SIEM Integration
+![Inbound Security Rule](screenshots/05-inbound-security-rule.png)  
+*Inbound NSG rules allowing controlled traffic to the honeypot.*
 
-- Configured **Azure Sentinel** to collect logs from honeypots and other Azure resources  
-- Enabled **diagnostic settings** to send activity and security logs to a Log Analytics workspace  
-- Created **custom data connectors** to ingest simulated attack traffic  
+![RDP into VM](screenshots/06-rdp-vm.png)  
+*RDP access into the honeypot VM.*
 
-**Business Problem Solved:**  
-- Centralizes security logs for visibility and monitoring  
-- Supports correlation of events to detect attacks early  
+![Firewall Disabled](screenshots/07-firewall-off.png)  
+*Firewall temporarily disabled to allow traffic for logging purposes.*
 
----
+![Ping Test](screenshots/08-ping-vm.png)  
+*Connectivity test generating network traffic.*
 
-## Alerts & Automated Response
-
-- Created **alert rules** to detect suspicious activity such as brute-force login attempts or abnormal traffic  
-- Configured **action groups** and **playbooks** to notify SOC analysts via email or Teams  
-- Tested alerts by simulating attacks on the honeypots to validate detection and response  
-
-**Business Problem Solved:**  
-- Ensures timely response to security incidents  
-- Reduces risk by automating detection and notification workflows  
+![Failed Sign-ins](screenshots/09-failed-signins.png)  
+*Simulated failed login attempts to generate security events.*
 
 ---
 
-## SOC Monitoring & Threat Analysis
+## Log Collection & Monitoring
 
-- Visualized security events in **Sentinel dashboards** for SOC analysts  
-- Analyzed alerts and log trends to identify potential threats  
-- Documented attack simulation results and response procedures  
+- Created a **Log Analytics Workspace** for centralized security logging  
+- Enabled **Windows Security Events** collection via **Azure Monitor Agent (AMA)**  
+- Configured **Data Collection Rules (DCRs)** to ingest relevant security logs
 
-**Business Problem Solved:**  
-- Provides SOC analysts with actionable insights  
-- Improves incident detection and threat mitigation capabilities  
+![Log Analytics Workspace](screenshots/10-log-analytics-overview.png)  
+*Log Analytics workspace receiving security event data.*
+
+![Windows Security Events](screenshots/11-windows-security-events.png)  
+*Windows Security Events enabled for SOC monitoring.*
+
+![Data Collection Rule](screenshots/12-data-collection-rule.png)  
+*Data Collection Rule defining which security events are collected.*
+
+![Azure Monitor Agent](screenshots/13-azure-monitor-agent.png)  
+*Azure Monitor Agent installed on the honeypot VM.*
+
+---
+
+## Security Event Queries & Threat Analysis
+
+- Queried security logs using **KQL (Kusto Query Language)**  
+- Identified **failed logins**, suspicious IP addresses, and malicious behavior  
+- Demonstrated SOC-style investigation and threat analysis workflows
+
+![KQL Query](screenshots/14-kql-query.png)  
+*KQL query used to analyze Windows Security Event logs.*
+
+![Malicious Activity Logs](screenshots/15-malicious-logs.png)  
+*Captured logs showing malicious activity targeting the honeypot.*
 
 ---
 
 ## Platforms & Technologies Used
 
-Azure Virtual Machines, Azure NSGs, Azure Log Analytics, Azure Sentinel (SIEM), Action Groups, Playbooks, Diagnostic Settings, Simulated Attack Traffic, GitHub  
+Azure Virtual Machines, Azure Virtual Networks, Network Security Groups (NSGs), Azure Log Analytics, Azure Monitor Agent, Data Collection Rules, KQL, Windows Security Events, Simulated Attack Traffic, GitHub
 
 ---
 
 ## Summary
 
-This lab demonstrates **end-to-end cloud security monitoring and SOC operations**, highlighting:
+This lab demonstrates **end-to-end SOC monitoring and threat detection in Azure**, including:
 
-- **Honeypot deployment** for threat simulation  
-- **Log collection and SIEM integration** for real-time monitoring  
-- **Automated alerts and response** for proactive security  
-- Practical experience in **incident detection, analysis, and cloud SOC workflows**
+- Secure **environment planning and resource organization**
+- **Honeypot deployment** for attack simulation
+- Centralized **log ingestion and analysis**
+- Practical **SOC investigation, detection, and response workflows**
