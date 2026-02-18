@@ -105,7 +105,7 @@ The lab simulates a real-world Security Operations Center (SOC) scenario using h
 ![KQL Query](14-kql-query.png)  
 *KQL query used to analyze Windows Security Event logs.*
 
-![Malicious Activity Logs](15-malicious-logs.png)  
+![Malicious Activity Logs](14-malicious-logs.png)  
 *Captured logs showing malicious activity targeting the honeypot.*
 
 ---
