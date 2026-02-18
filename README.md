@@ -27,7 +27,7 @@ The lab simulates a real-world Security Operations Center (SOC) scenario using h
 - Organized compute, networking, and monitoring components under one management boundary  
 - Enabled easier lifecycle management, visibility, and cost control
 
-![Resource Group Creation](screenshots/00-resource-group-creation.png)  
+![Resource Group Creation](00-resource-group-creation.png)  
 *Dedicated resource group created to contain all SOC lab resources.*
 
 ---
@@ -38,10 +38,10 @@ The lab simulates a real-world Security Operations Center (SOC) scenario using h
 - Defined address space and subnet for the honeypot VM  
 - Provided controlled network segmentation for security monitoring and analysis
 
-![VNet Creation](screenshots/01-vnet-creation.png)  
+![VNet Creation](01-vnet-creation.png)  
 *Virtual network created to support the honeypot and SOC monitoring architecture.*
 
-![VNet Overview](screenshots/02-vnet-overview.png)  
+![VNet Overview](02-vnet-overview.png)  
 *Overview of the configured virtual network and subnet.*
 
 ---
@@ -53,25 +53,25 @@ The lab simulates a real-world Security Operations Center (SOC) scenario using h
 - Configured **Network Security Groups (NSGs)** to allow controlled inbound traffic  
 - Generated security events using RDP access, ICMP traffic, and failed authentication attempts
 
-![VM Provisioning](screenshots/03-vm-provisioning.png)  
+![VM Provisioning](03-vm-provisioning.png)  
 *Provisioning a Windows VM to act as a honeypot.*
 
-![VM Overview](screenshots/04-vm-overview.png)  
+![VM Overview](04-vm-overview.png)  
 *Overview of the deployed honeypot virtual machine.*
 
-![Inbound Security Rule](screenshots/05-inbound-security-rule.png)  
+![Inbound Security Rule](05-inbound-security-rule.png)  
 *Inbound NSG rules allowing controlled traffic to the honeypot.*
 
-![RDP into VM](screenshots/06-rdp-vm.png)  
+![RDP into VM](06-rdp-vm.png)  
 *RDP access into the honeypot VM.*
 
-![Firewall Disabled](screenshots/07-firewall-off.png)  
+![Firewall Disabled](07-firewall-off.png)  
 *Firewall temporarily disabled to allow traffic for logging purposes.*
 
-![Ping Test](screenshots/08-ping-vm.png)  
+![Ping Test](08-ping-vm.png)  
 *Connectivity test generating network traffic.*
 
-![Failed Sign-ins](screenshots/09-failed-signins.png)  
+![Failed Sign-ins](09-failed-signins.png)  
 *Simulated failed login attempts to generate security events.*
 
 ---
