@@ -91,7 +91,7 @@ The lab simulates a real-world Security Operations Center (SOC) scenario using h
 ![Data Collection Rule](12-data-collection-rule.png)  
 *Data Collection Rule defining which security events are collected.*
 
-![Azure Monitor Agent](13-azure-monitor-agent.png)  
+![Azure Monitor Agent](12-azure-monitor-agent.png)  
 *Azure Monitor Agent installed on the honeypot VM.*
 
 ---
