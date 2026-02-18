@@ -82,16 +82,16 @@ The lab simulates a real-world Security Operations Center (SOC) scenario using h
 - Enabled **Windows Security Events** collection via **Azure Monitor Agent (AMA)**  
 - Configured **Data Collection Rules (DCRs)** to ingest relevant security logs
 
-![Log Analytics Workspace](screenshots/10-log-analytics-overview.png)  
+![Log Analytics Workspace](10-log-analytics-overview.png)  
 *Log Analytics workspace receiving security event data.*
 
-![Windows Security Events](screenshots/11-windows-security-events.png)  
+![Windows Security Events](11-windows-security-events.png)  
 *Windows Security Events enabled for SOC monitoring.*
 
-![Data Collection Rule](screenshots/12-data-collection-rule.png)  
+![Data Collection Rule](12-data-collection-rule.png)  
 *Data Collection Rule defining which security events are collected.*
 
-![Azure Monitor Agent](screenshots/13-azure-monitor-agent.png)  
+![Azure Monitor Agent](13-azure-monitor-agent.png)  
 *Azure Monitor Agent installed on the honeypot VM.*
 
 ---
@@ -102,10 +102,10 @@ The lab simulates a real-world Security Operations Center (SOC) scenario using h
 - Identified **failed logins**, suspicious IP addresses, and malicious behavior  
 - Demonstrated SOC-style investigation and threat analysis workflows
 
-![KQL Query](screenshots/14-kql-query.png)  
+![KQL Query](14-kql-query.png)  
 *KQL query used to analyze Windows Security Event logs.*
 
-![Malicious Activity Logs](screenshots/15-malicious-logs.png)  
+![Malicious Activity Logs](15-malicious-logs.png)  
 *Captured logs showing malicious activity targeting the honeypot.*
 
 ---
